@@ -15,10 +15,11 @@ electronics like mobile phones, video games, and streaming devices."
 
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-struct Product {  
+struct Product {
   int sku;
   int quantity;
   float price;
@@ -26,6 +27,7 @@ struct Product {
 };
 
 const int SIZE = 100;
+
 
 // 1. ADD a new product to the inventory (prompt user for input values)
 void addProduct(int &counter, Product items[]) {
@@ -35,9 +37,7 @@ void addProduct(int &counter, Product items[]) {
        << "sku, quantity, price on one line, and the product name on a separate line"
        << endl;
 
-  // need to input from user. example: $ 1234 3 99.95
-
-  scanf("%i %i %f", &items[counter].sku, &items[counter].quantity, &items[counter].price);
+    scanf("%i %i %f", &items[counter].sku, &items[counter].quantity, &items[counter].price);
   
   cin >> ws;
   getline(cin, items[counter].productName);
@@ -50,13 +50,25 @@ void addProduct(int &counter, Product items[]) {
 //void removeProduct() {}
 
 // 3. DISPLAY the inventory _by sku_
-//void displayInventory() {}
+void displayInventory(int counter, Product items[]) {
 
-// 4. LOOKUP a product by sku
+  cout << endl;
+  
+  for (int i = 0 ; i < counter ; i++) {
+    cout << setw(5) << right  << items[i].sku << " "
+	 << setw(5) << right  << items[i].quantity << " "
+	 << setw(8) << setprecision(2) << fixed << right << items[i].price << " "
+	 << setw(10) << left << items[i].productName
+	 << endl;    
+  }
+  
+  cout << endl;
+}
+
+// 4. LOOKUP a product by sku MUST USE BINARY SEARCH
 //void lookupInventory() {}
 
 // 5. QUIT
-
 
 int main () {
 
@@ -68,8 +80,10 @@ int main () {
     cout << "Manage Inventory Menu\n"
 	 << endl
 	 << "1. Add product\n"
-	 << "5. Quit the program\n";
-    
+	 << "3. Display inventory sorted by sku\n"
+	 << "5. Quit the program\n\n"
+	 << "Enter your choice: ";
+
     cin >> option;
     
     switch(option) {
@@ -77,11 +91,12 @@ int main () {
       break;
       //    case 2: removeProduct();
       //      break;
-      //    case 3: displayInventory();
-      //      break;
+    case 3: displayInventory(counter, items);
+      break;
       //    case 4:lookupInventory();
       //      break;
-    case 5: break;
+    case 5: cout << "Exiting the program.\n";
+      break;
     }
   } while (option != 5);
 
