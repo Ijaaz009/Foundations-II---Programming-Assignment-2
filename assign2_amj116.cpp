@@ -25,27 +25,35 @@ struct Product {
     float price;
 };
 
+const int SIZE = 100;
+
 // 1. ADD a new product to the inventory (prompt user for input values)
 void addProduct() {}
 
 // 2. REMOVE a product from the inventory (by sku).
-void removeProduct() {}
+//void removeProduct() {}
 
 // 3. DISPLAY the inventory _by sku_
-void displayInventory() {}
+//void displayInventory() {}
 
 // 4. LOOKUP a product by sku
-void lookupInventory() {}
+//void lookupInventory() {}
 
 // 5. QUIT
 
 
 int main () {
 
-    addProduct();
-    removeProduct();
-    displayInventory();
-    searchInventory();
-    
+  int option = 0;
+
+  Product items[SIZE];
+  
+  
+  addProduct();
+  
+  //    removeProduct();
+  //    displayInventory();
+  //    lookupInventory();
+  
    return 0;
 }
