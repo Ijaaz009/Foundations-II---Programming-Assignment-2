@@ -18,17 +18,33 @@ electronics like mobile phones, video games, and streaming devices."
 
 using namespace std;
 
-struct Product {
-    string productName;
-    int sku;
-    int quantity;
-    float price;
+struct Product {  
+  int sku;
+  int quantity;
+  float price;
+  string productName;
 };
 
 const int SIZE = 100;
 
 // 1. ADD a new product to the inventory (prompt user for input values)
-void addProduct() {}
+void addProduct(int &counter, Product items[]) {
+
+  cout << "Enter the data for the new product in the following order:"
+       << endl
+       << "sku, quantity, price on one line, and the product name on a separate line"
+       << endl;
+
+  // need to input from user. example: $ 1234 3 99.95
+
+  scanf("%i %i %f", &items[counter].sku, &items[counter].quantity, &items[counter].price);
+  
+  cin >> ws;
+  getline(cin, items[counter].productName);
+  cout << endl;
+  
+  counter++;
+}
 
 // 2. REMOVE a product from the inventory (by sku).
 //void removeProduct() {}
@@ -45,15 +61,29 @@ void addProduct() {}
 int main () {
 
   int option = 0;
+  int counter = 0;
+  struct Product items[SIZE];
 
-  Product items[SIZE];
-  
-  
-  addProduct();
-  
-  //    removeProduct();
-  //    displayInventory();
-  //    lookupInventory();
-  
-   return 0;
+  do {
+    cout << "Manage Inventory Menu\n"
+	 << endl
+	 << "1. Add product\n"
+	 << "5. Quit the program\n";
+    
+    cin >> option;
+    
+    switch(option) {
+    case 1: addProduct(counter, items);
+      break;
+      //    case 2: removeProduct();
+      //      break;
+      //    case 3: displayInventory();
+      //      break;
+      //    case 4:lookupInventory();
+      //      break;
+    case 5: break;
+    }
+  } while (option != 5);
+
+  return 0;
 }
