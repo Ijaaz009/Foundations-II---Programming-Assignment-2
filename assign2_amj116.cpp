@@ -38,7 +38,7 @@ void displayInventory() {}
 void lookupInventory() {}
 
 // 5. QUIT
-// QUIT as a function not necessary
+
 
 int main () {
 
