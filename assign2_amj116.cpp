@@ -47,7 +47,21 @@ void addProduct(int &counter, Product items[]) {
 }
 
 // 2. REMOVE a product from the inventory (by sku).
-//void removeProduct() {}
+void removeProduct(int count, Product items[]) {
+
+  int sku;
+  cout << "Enter sku of product to remove: ";
+  cin >> sku;
+
+  for (int i = 0 ; i < count ; i++) {
+    if (sku == items[i].sku)
+      items[i].sku = items[i-1].sku;
+    else
+      cout << "Item not found\n";
+  }
+    
+  
+}
 
 // 3. DISPLAY the inventory _by sku_
 void displayInventory(int counter, Product items[]) {
@@ -80,6 +94,7 @@ int main () {
     cout << "Manage Inventory Menu\n"
 	 << endl
 	 << "1. Add product\n"
+	 << "2. Remove product\n"
 	 << "3. Display inventory sorted by sku\n"
 	 << "5. Quit the program\n\n"
 	 << "Enter your choice: ";
@@ -89,8 +104,8 @@ int main () {
     switch(option) {
     case 1: addProduct(counter, items);
       break;
-      //    case 2: removeProduct();
-      //      break;
+    case 2: removeProduct(counter, items);
+      break;
     case 3: displayInventory(counter, items);
       break;
       //    case 4:lookupInventory();
