@@ -1,0 +1,125 @@
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 1
+
+Enter the data for the new product in the following order:
+sku, quantity, price on one line, and the product name on a separate line.
+1234 3 99.95
+iPhone 3GS
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 1
+
+Enter the data for the new product in the following order:
+sku, quantity, price on one line, and the product name on a separate line.
+1122 10 11.89
+Samsung Captivate
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 1
+
+Enter the data for the new product in the following order:
+sku, quantity, price on one line, and the product name on a separate line.
+8787 1 40.50
+Blackberry Bold
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 3
+
+      1122    10    11.89 Samsung Captivate
+      1234     3    99.95 iPhone 3GS
+      8787     1    40.50 Blackberry Bold
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 4
+Enter sku of product to find: 8787
+
+product name: Blackberry Bold
+sku: 8787
+quantity: 1
+price: 40.50
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 2
+Enter sku of product to remove: 1234
+Removed product with sku: 1234
+
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 3
+
+      1122    10    11.89 Samsung Captivate
+      8787     1    40.50 Blackberry Bold
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 2
+Enter sku of product to remove: 5555
+No product found with this sku. 
+
+
+Manage Inventory Menu
+
+1. Add product
+2. Remove product
+3. Display inventory sorted by sku
+4. Lookup a product by sku
+5. Quit the Program
+
+Enter your choice: 6
+Please enter 1, 2, 3, 4, or 5: 5
+Exiting the program.
