@@ -36,8 +36,8 @@ void addProduct(int &counter, Product items[]) {
        << endl
        << "sku, quantity, price on one line, and the product name on a separate line"
        << endl;
-
-    scanf("%i %i %f", &items[counter].sku, &items[counter].quantity, &items[counter].price);
+  
+  scanf("%i %i %f", &items[counter].sku, &items[counter].quantity, &items[counter].price);
   
   cin >> ws;
   getline(cin, items[counter].productName);
@@ -47,26 +47,29 @@ void addProduct(int &counter, Product items[]) {
 }
 
 // 2. REMOVE a product from the inventory (by sku).
-void removeProduct(int count, Product items[]) {
-
+void removeProduct(int &counter, Product items[]) {
+  
   int sku;
   cout << "Enter sku of product to remove: ";
   cin >> sku;
 
-  for (int i = 0 ; i < count ; i++) {
-    if (sku == items[i].sku)
-      items[i].sku = items[i-1].sku;
+  for (int i = counter ; i >= 0 ; i--) {
+    if (sku == items[i].sku) {
+      items[i] = items[i+1];
+      counter--;
+    }
     else
       cout << "Item not found\n";
   }
-    
-  
 }
 
+// * NEED SORT
 // 3. DISPLAY the inventory _by sku_
 void displayInventory(int counter, Product items[]) {
 
   cout << endl;
+
+  // insert SORT
   
   for (int i = 0 ; i < counter ; i++) {
     cout << setw(5) << right  << items[i].sku << " "
@@ -114,6 +117,6 @@ int main () {
       break;
     }
   } while (option != 5);
-
+  
   return 0;
 }
