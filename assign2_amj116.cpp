@@ -49,18 +49,27 @@ void addProduct(int &counter, Product items[]) {
 // 2. REMOVE a product from the inventory (by sku).
 void removeProduct(int &counter, Product items[]) {
   
-  int sku;
+  int target;
   cout << "Enter sku of product to remove: ";
-  cin >> sku;
-
-  for (int i = counter ; i >= 0 ; i--) {
-    if (sku == items[i].sku) {
-      items[i] = items[i+1];
-      counter--;
+  cin >> target;
+  
+  int position = -1; //position of target
+  bool found = false; //flag, true when target is found
+  
+  for (int i=0; i < counter && !found; i++)
+    {
+      if (items[i].sku == target) //found the target!
+	{
+	  found = true; //set the flag
+	  position = i; //record which item
+	  items[i] = items[i+1];
+	  counter--;
+	    }
     }
-    else
-      cout << "Item not found\n";
-  }
+  
+  if (found == false)
+    cout << "Item not found\n"
+	 << endl;
 }
 
 // * NEED SORT
