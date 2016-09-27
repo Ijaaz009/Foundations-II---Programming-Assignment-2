@@ -78,7 +78,20 @@ void displayInventory(int counter, Product items[]) {
 
   cout << endl;
 
-  // insert SORT
+  // error
+  bool swap;
+  int temp;
+  do {
+    swap = false;
+    for (int i = 0; i < counter; i++) {
+      if (items[i].sku > items[i+1].sku) {
+	temp = items[i];
+	items[i] = items[i+1];
+	items[i+1] = temp;
+	swap = true;
+      }
+    }
+  } while (swap);
   
   for (int i = 0 ; i < counter ; i++) {
     cout << setw(5) << right  << items[i].sku << " "
@@ -87,12 +100,33 @@ void displayInventory(int counter, Product items[]) {
 	 << setw(10) << left << items[i].productName
 	 << endl;    
   }
-  
   cout << endl;
 }
 
 // 4. LOOKUP a product by sku MUST USE BINARY SEARCH
-//void lookupInventory() {}
+// BINARY search needed
+void lookupInventory(int counter, Product items[]) {
+
+  /*
+  int first = 0, //index of beginning of search list
+    last = size – 1, //index of end of search list
+    middle, //index of midpoint of search list
+    position = -1; //position of target value
+  bool found = false; //flag
+  while (first <= last && !found) {
+    middle = (first + last) /2; //calculate midpoint
+    if (array[middle] == target) {
+      found = true;
+      position = middle;
+    } else if (target < array[middle]) {
+      last = middle – 1; //search list = lower half
+    } else {
+      first = middle + 1; //search list = upper half
+    }
+  }
+  return position;
+  */
+}
 
 // 5. QUIT
 
@@ -120,8 +154,8 @@ int main () {
       break;
     case 3: displayInventory(counter, items);
       break;
-      //    case 4:lookupInventory();
-      //      break;
+    case 4:lookupInventory(counter, items);
+      break;
     case 5: cout << "Exiting the program.\n";
       break;
     }
