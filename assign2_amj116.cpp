@@ -16,6 +16,7 @@ electronics like mobile phones, video games, and streaming devices."
 
 #include <iostream>
 #include <iomanip>
+#include <stdio.h>
 
 using namespace std;
 
@@ -83,7 +84,7 @@ void displayInventory(int counter, Product items[]) {
   int temp;
   do {
     swap = false;
-    for (int i = 0; i < counter; i++) {
+    for (int i = 0; i <= counter; i++) {
       if (items[i].sku > items[i+1].sku) {
 	temp = items[i];
 	items[i] = items[i+1];
@@ -158,6 +159,8 @@ int main () {
       break;
     case 5: cout << "Exiting the program.\n";
       break;
+      //    default: cout << "please enter 1, 2, 3, 4, or 5: ";
+      //      break;
     }
   } while (option != 5);
   
